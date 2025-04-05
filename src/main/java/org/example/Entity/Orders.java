@@ -24,17 +24,17 @@ public class Orders {
     @JoinColumn(name = "user_id", nullable = false)
     private Users user;
 
-    // One-to-Many relationship with OrderDetails
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderDetails> orderDetails;
+//    // One-to-Many relationship with OrderDetails
+//    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+//    private List<OrderDetails> orderDetails;
 
     public Orders() {}
 
-    public Orders(LocalDateTime orderDate, BigDecimal totalAmount, Users user, List<OrderDetails> orderDetails) {
+    public Orders(LocalDateTime orderDate, BigDecimal totalAmount, Users user) {
         this.orderDate = orderDate;
         this.totalAmount = totalAmount;
         this.user = user;
-        this.orderDetails = orderDetails;
+//        this.orderDetails = orderDetails;
     }
 
     // Getters and Setters
@@ -71,13 +71,13 @@ public class Orders {
         this.user = user;
     }
 
-    public List<OrderDetails> getOrderDetails() {
-        return orderDetails;
-    }
-
-    public void setOrderDetails(List<OrderDetails> orderDetails) {
-        this.orderDetails = orderDetails;
-    }
+//    public List<OrderDetails> getOrderDetails() {
+//        return orderDetails;
+//    }
+//
+//    public void setOrderDetails(List<OrderDetails> orderDetails) {
+//        this.orderDetails = orderDetails;
+//    }
 
     @Override
     public String toString() {
@@ -86,7 +86,6 @@ public class Orders {
                 ", orderDate=" + orderDate +
                 ", totalAmount=" + totalAmount +
                 ", user=" + user +
-                ", orderDetails=" + orderDetails +
                 '}';
     }
 }

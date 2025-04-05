@@ -18,17 +18,19 @@ public class Category {
     private String description;
 
     // One-to-Many Relationship with Product
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private List<Product> products;
+//    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+//    private List<Product> products;
 
 
     public Category() {}
 
-    public Category(String name, String description, List<Product> products) {
+    public Category(String name, String description) {
         this.name = name;
         this.description = description;
-        this.products = products;
+//        this.products = products;
     }
+
+    //id protein desc1 <avatar,gnc,muscleblaze ka sabka id>
 
     // Getters and setters
     public int getId() {
@@ -55,11 +57,11 @@ public class Category {
         this.description = description;
     }
 
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
+//    public List<Product> getProducts() {
+//        return products;
+//    }
+//
+//    public void setProducts(List<Product> products) {
+//        this.products = products;
+//    }
 }

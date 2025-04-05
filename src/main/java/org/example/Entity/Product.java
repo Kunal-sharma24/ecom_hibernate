@@ -25,6 +25,11 @@ public class Product {
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
+    //muscleblaze 2000 20 category_id(protein)
+    //gnc 3000 15 protein
+    //avatar 2500 30 protein
+    //muscleblaze 1000 10 creatine
+
 
     public Product() {
     }

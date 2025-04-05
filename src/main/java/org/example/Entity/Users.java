@@ -25,17 +25,17 @@ public class Users {
     private Role role;
 
     // One-to-Many relationship with Orders
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Orders> orders;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    private List<Orders> orders;
 
     public Users() {}
 
-    public Users(String username, String password, String email, Role role, List<Orders> orders) {
+    public Users(String username, String password, String email, Role role) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.role = role;
-        this.orders = orders;
+//        this.orders = orders;
     }
 
     // Getters and Setters
@@ -80,13 +80,13 @@ public class Users {
         this.role = role;
     }
 
-    public List<Orders> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Orders> orders) {
-        this.orders = orders;
-    }
+//    public List<Orders> getOrders() {
+//        return orders;
+//    }
+//
+//    public void setOrders(List<Orders> orders) {
+//        this.orders = orders;
+//    }
 
     @Override
     public String toString() {
@@ -96,7 +96,12 @@ public class Users {
                 ", password='[PROTECTED]'" +
                 ", email='" + email + '\'' +
                 ", role=" + role +
-                ", orders=" + orders +
                 '}';
     }
+    public enum Role {
+        ADMIN,
+        CUSTOMER;
+    }
 }
+
+
